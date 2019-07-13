@@ -16,7 +16,6 @@ class MarvelManager{
             if result != nil{
                 completion(result)
             }else{
-                completion(nil)
             }
         }
     }

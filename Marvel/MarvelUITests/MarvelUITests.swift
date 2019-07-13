@@ -6,6 +6,8 @@
 //  Copyright © 2019 Murilo de Souza Lopes. All rights reserved.
 //
 
+@testable import Marvel
+
 import XCTest
 
 class MarvelUITests: XCTestCase {
@@ -29,6 +31,8 @@ class MarvelUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCUIApplication().collectionViews.children(matching: .cell).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.tap()
+
     }
 
 }

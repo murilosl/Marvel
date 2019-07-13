@@ -10,5 +10,5 @@ import Foundation
 
 typealias APIResultCall = (Data?) -> ()
 typealias APIResultImage = (Data?) -> ()
-typealias APIResultParse = (MarvelCharacterRoot?) -> ()
+typealias APIResultParse = ([MarvelCharacter]) -> ()
 

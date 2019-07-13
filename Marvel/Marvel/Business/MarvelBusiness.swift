@@ -18,12 +18,10 @@ class MarvelBusiness{
                 do{
                     let json = JSONDecoder()
                     let marvel = try json.decode(MarvelCharacterRoot.self, from: result!)
-                    completion(marvel)
+                    completion(marvel.data.results)
                 }catch{
-                  completion(nil)
                 }
             }else{
-                completion(nil)
             }
         }
     }

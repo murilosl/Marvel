@@ -9,14 +9,32 @@
 import Foundation
 
 struct MarvelCharacter: Codable {
+    let id: Int
     let name: String
-    let thumbnail: [thumbnail]
+    let thumbnail: thumbnail
+    let description: String
 }
 
 struct thumbnail: Codable{
     let path: String
+    let ext: String
+    
+    var url: String {
+        return path + "." + ext
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case path
+        case ext = "extension"
+    }
 }
 
+
+
 struct MarvelCharacterRoot: Codable{
+    let data: MarvelCharacterResult
+}
+
+struct MarvelCharacterResult: Codable {
     let results: [MarvelCharacter]
 }

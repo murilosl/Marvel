@@ -27,11 +27,11 @@ class APIRequest{
             "hash": hash
         ]
         
-        let urlRequest = url + hash
-        
-        Alamofire.request(url, headers: headers).responseData { (result) in
+        let urlRequest = url + "?ts=\(ts)&hash=\(hash)&apikey=\(apikey)"
+
+        Alamofire.request(urlRequest, headers: headers).responseData{ (result) in
             if let dataReturn = result.value{
-                completion(dataReturn)
+               completion(dataReturn)
             }else{
                 completion(nil)
             }
